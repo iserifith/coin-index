@@ -42,11 +42,15 @@ class Bitcoin extends Component {
 		this.setState({MYR_BTC: MYR_BTC});
 	}
 
-	componentDidMount(){
+	componentWillMount(){
 		this.getMYR();
 		var bitcoinInterval = setInterval(this.getBitcoin, 2000);
 		this.setState({bitcoinInterval: bitcoinInterval});
 		this.setState({MYR_BTC: null});
+	}
+
+	componentDidMount(){
+
 	}
 
 
@@ -82,7 +86,7 @@ class Bitcoin extends Component {
 			}
 			</div>
 
-			
+
 
 			</div>
 			<BitcoinStats></BitcoinStats>

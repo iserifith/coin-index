@@ -22,7 +22,7 @@ class BitcoinCharts extends Component {
 
 			for (var i = response.length - 1; i >= 0; i--) {
 				var unix = moment.unix(response[i].x).format("DD/MM");
-				var myr_price = parseInt(parseFloat(response[i].y * this.state.USD_MYR).toFixed(2));
+				var myr_price = parseInt(parseFloat(response[i].y * this.state.USD_MYR).toFixed(2), 10);
 				response[i].x = unix;
 				response[i].y = myr_price;
 			}
